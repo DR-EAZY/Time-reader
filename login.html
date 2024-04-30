@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Login</h2>
+  <form action="#" method="post">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="submit" value="Login">
+  </form>
+  <div class="login-link">
+    <p>Don't have an account yet? <a href="signup.html">Sign up here</a></p>
+  </div>
+</div>
+<script>
+    
+  // Get username from local storage
+var username = localStorage.getItem("username");
+
+// Set username in the span element
+document.getElementById("username").textContent = username;
+
+</script>
+</body>
+</html>

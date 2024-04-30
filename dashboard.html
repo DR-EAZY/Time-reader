@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Welcome, <span id="username"></span>!</h2>
+  <h3>Electricity Usage</h3>
+  <form id="usageForm">
+    <label for="dateLightOn">Date Light Brought On:</label>
+    <input type="date" id="dateLightOn" name="dateLightOn" required>
+    <input type="time" id="timeLightOn" name="timeLightOn" required>
+
+    <label for="dateGeneratorOn">Date Generator Was On:</label>
+    <input type="date" id="dateGeneratorOn" name="dateGeneratorOn" required>
+    <input type="time" id="timeGeneratorOn" name="timeGeneratorOn" required>
+
+    <label for="dieselUsage">Litres of Diesel Used by Generator:</label>
+    <input type="number" id="dieselUsage" name="dieselUsage" required>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="tableContainer">
+    <h3>Electricity Usage Summary</h3>
+    <table id="usageTable">
+      <tr>
+        <th>Date Light Brought On</th>
+        <th>Time Light Brought On</th>
+        <th>Date Generator Was On</th>
+        <th>Time Generator Was On</th>
+        <th>Litres of Diesel Used</th>
+        <th>Time Difference</th>
+        <th>Edit</th>
+        <th>Delete</th>      
+
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script src="dashboard.js"></script>
+<script>
+  // Get username from local storage
+  var username = localStorage.getItem("username");
+
+  // Set username in the span element
+  document.getElementById("username").textContent = username;
+</script>
+
+</body>
+</html>
